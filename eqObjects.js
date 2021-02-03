@@ -23,14 +23,18 @@ const eqObjects = (obj1, obj2) => {
     return false;
   } else {
     for (const key of keys) {
+      // If the values for the key are not the same for both objects
       if (obj1[key] !== obj2[key]) {
+        // Is it an Array?
         if (Array.isArray(obj1[key])) {
+          // Return the variable that takes the result of eqArrays function.
           const x = eqArrays(obj1[key], obj2[key]);
-          console.log(x);
           if (!x) {
             return false;
           }
         } else {
+          // It is not an array then the primitive values are not equal to each
+          // other.
           return false;
         }
       }
@@ -40,5 +44,8 @@ const eqObjects = (obj1, obj2) => {
 };
 
 const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+console.log(eqObjects(cd, dc)); // => true
+
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(eqObjects(cd, cd2)); // => false
