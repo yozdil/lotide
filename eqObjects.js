@@ -1,21 +1,19 @@
-// EQUAL ARRAYS FUNCTION
-
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr2[i] !== arr1[i]) {
-        return false;
-      }
-    }
-    return true;
-  } else {
-    return false;
-  }
-};
-
 // EQUAL OBJECTS FUNCTION
-
 const eqObjects = (obj1, obj2) => {
+  // EQUAL ARRAYS FUNCTION
+  const eqArrays = (arr1, arr2) => {
+    if (arr1.length === arr2.length) {
+      for (let i = 0; i < arr1.length; i++) {
+        if (arr2[i] !== arr1[i]) {
+          return false;
+        }
+      }
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const keys = Object.keys(obj1);
   // If the objects do not have the same amount of keys return false, they
   // cannot be equal.
