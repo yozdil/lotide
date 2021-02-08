@@ -6,7 +6,7 @@ const eqArrays = (arr1, arr2) => {
     return false;
   }
   for (let i = 0; i < arr1.length; i++) {
-    if (!eqArrays(arr1[i], arr2[i])) {
+    if (arr1[i] !== arr2[i]) {
       if (Array.isArray(arr1[i])) {
         return eqArrays(arr1[i], arr2[i]);
       }
