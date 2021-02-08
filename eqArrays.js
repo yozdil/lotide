@@ -1,7 +1,6 @@
 // EQUAL ARRAYS FUNCTION
 
-const assertEqual = require("./assertEqual");
-
+// EQ ARRAYS FUNCTION
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
@@ -18,18 +17,3 @@ const eqArrays = (arr1, arr2) => {
 };
 
 module.exports = eqArrays;
-
-// TEST CODE
-
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
-assertEqual(
-  eqArrays(
-    [[2, 3], [4]],
-    [
-      [2, 3],
-      [4, 5],
-    ]
-  ),
-  false
-);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);

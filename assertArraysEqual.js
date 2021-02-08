@@ -1,4 +1,5 @@
-const eqArrays = require('./eqArrays');
+// EQ ARRAYS FUNCTION
+const eqArrays = require("./eqArrays");
 
 // EQUAL ARRAYS ASSERTION FUNCTION
 const assertArraysEqual = (arr1, arr2) => {
@@ -9,6 +10,4 @@ const assertArraysEqual = (arr1, arr2) => {
   }
 };
 
-// TEST CODE
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, "a", 3], [1, 5, 3]);
+module.exports = assertArraysEqual;
