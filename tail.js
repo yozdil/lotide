@@ -1,19 +1,8 @@
-// ASSERT EQUAL FUNCTION
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅️✅️✅️Assertion Passed: [${actual}] === [${expected}]`);
-  } else {
-    console.log(`❗️❗️❗️Assertion Failed: [${actual}] !== [${expected}]`);
-  }
-};
+const assertEqual = require("./assertEqual");
 
-const tail = (array) => {
-  let result = new Array();
-  for (const element of array) {
-    result.push(element);
-  }
-  return result.splice(1);
-};
+// TAIL FUNCTION
+
+const tail = (array) => [...array].splice(1);
 
 // Test Case: Check the original array
 const words = ["Yo Yo", "Lighthouse", "Labs"];
